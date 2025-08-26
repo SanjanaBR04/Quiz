@@ -15,8 +15,8 @@ let score = 0;
 // Fetch questions from backend
 async function loadQuestions() {
   try {
-    console.log("Fetching questions from http://localhost:5000/api/quiz/questions...");
-    const response = await fetch("http://localhost:5000/api/quiz/questions", {
+    console.log("Fetching questions from https://quiz-6-dlcr.onrender.com/api/quiz/questions...");
+    const response = await fetch("https://quiz-6-dlcr.onrender.com/api/quiz/questions", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
