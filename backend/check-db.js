@@ -1,7 +1,8 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const Question = require("./models/question");
 
-mongoose.connect("mongodb://localhost:27017/Quiz")
+mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
     console.log("Connected to MongoDB for checking");
     const questions = await Question.find();
