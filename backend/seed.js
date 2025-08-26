@@ -1,7 +1,8 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const Question = require("./models/question");
 
-mongoose.connect("mongodb://127.0.0.1:27017/Quiz") // Match with index.js
+mongoose.connect(process.env.MONGO_URI) // Match with index.js
     .then(async () => {
         console.log("Connected to MongoDB for seeding");
         await Question.deleteMany({});
