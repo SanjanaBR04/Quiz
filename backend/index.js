@@ -9,7 +9,11 @@ const path = require("path");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === "production"
+    ? "https://sanjanabr04.github.io"  // allow only your GitHub Pages in prod
+    : "*"                              // allow all origins in dev
+}));
 
 console.log("NODE_ENV =", process.env.NODE_ENV);
 console.log("MONGO_URI =", process.env.MONGO_URI);
