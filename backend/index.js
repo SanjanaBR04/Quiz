@@ -11,6 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+console.log("NODE_ENV =", process.env.NODE_ENV);
+console.log("MONGO_URI =", process.env.MONGO_URI);
+
 // ✅ Debug: list files in routes folder
 const routesPath = path.join(__dirname, "routes");
 console.log("📂 Files in routes folder:", fs.readdirSync(routesPath));
